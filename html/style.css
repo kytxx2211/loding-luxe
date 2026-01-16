@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    transition: transform 0.15s ease;
+}
+
+.bg {
+    position: fixed;
+    inset: 0;
+    background: url('assets/bg.jpg') center/cover no-repeat;
+    filter: brightness(0.4);
+}
+
+.container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: gold;
+}
+
+.title {
+    font-family: 'Cinzel', serif;
+    font-size: 78px;
+    letter-spacing: 10px;
+    background: linear-gradient(90deg,#b08d2d,#f5e6b8,#8a6b1f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: italianBreath 5s ease-in-out infinite;
+}
+
+@keyframes italianBreath {
+    0% { filter: drop-shadow(0 0 6px rgba(176,141,45,.4)); }
+    50% { filter: drop-shadow(0 0 22px rgba(245,230,184,.9)); }
+    100% { filter: drop-shadow(0 0 6px rgba(176,141,45,.4)); }
+}
+
+.logo {
+    width: 220px;
+    animation: crestSpin 60s linear infinite;
+}
+
+@keyframes crestSpin {
+    from { transform: rotate(0); }
+    to { transform: rotate(360deg); }
+}
+
+.loading-bar {
+    width: 400px;
+    height: 10px;
+    background: #1b1b1b;
+    margin-top: 40px;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#6f5317,#d4af37,#f5e6b8);
+}
+
+.subbass-shake {
+    animation: dynastyShake 0.35s ease;
+}
+
+@keyframes dynastyShake {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(1px,-1px); }
+    100% { transform: translate(0,0); }
+}
+
+.gate-open {
+    animation: gateOpen 1.2s ease forwards;
+}
+
+@keyframes gateOpen {
+    0% { filter: brightness(0.6); }
+    50% { filter: brightness(1.6); }
+    100% { filter: brightness(1); }
+}
+
+.skip-intro * {
+    animation: none !important;
+}

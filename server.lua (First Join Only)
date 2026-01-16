@@ -1,0 +1,13 @@
+local joined = {}
+
+RegisterNetEvent("luxe:checkFirstJoin", function()
+    local src = source
+    local identifier = GetPlayerIdentifier(src, 0)
+
+    if not joined[identifier] then
+        joined[identifier] = true
+        TriggerClientEvent("luxe:firstJoin", src, true)
+    else
+        TriggerClientEvent("luxe:firstJoin", src, false)
+    end
+end)
